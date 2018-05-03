@@ -10,8 +10,7 @@
 
 F3 <- function(year) {
   library(dplyr)
-  d <- read.csv("./R/Seasons_Stats_NBA.csv")
-  d <- d %>% dplyr::filter(Year == year)
+  d <- nba %>% dplyr::filter(Year == year)
   nums <- unlist(lapply(d, is.numeric))
   out <- cor(d[ , nums])
   return(out)

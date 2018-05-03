@@ -8,8 +8,7 @@
 
 F2 <- function(year) {
   library(dplyr)
-  d <- read.csv("./R/Seasons_Stats_NBA.csv")
-  out <- d %>% dplyr::filter(Year == year) %>% arrange(desc(Age)) %>% head(1) %>% select(Player) %>% unlist() %>% as.character()
+  out <- nba %>% dplyr::filter(Year == year) %>% arrange(desc(Age)) %>% head(1) %>% select(Player) %>% unlist() %>% as.character()
   return(out)
 }
 
